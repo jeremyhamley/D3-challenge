@@ -91,7 +91,7 @@ d3.csv("D3_data_journalism/data/data.csv").then(function(censusData) {
       .attr("class", "tooltip")
       .offset([80, -60])
       .html(function(data, index) {
-        return (`${data.abbr}<br>Poverty: ${data.poverty} %<br>Smokers: ${data.smokes} %`);
+        return (`${data.state}<br>Poverty: ${data.poverty} %<br>Smokers: ${data.smokes} %`);
       });
 
     // Create tooltip in the chart
