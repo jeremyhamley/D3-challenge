@@ -66,7 +66,7 @@ d3.csv("D3_data_journalism/data/data.csv").then(function(censusData) {
     .append("circle")
     .attr("cx", d => xLinearScale(d.poverty))
     .attr("cy", d => yLinearScale(d.smokes))
-    .attr("r", "15")
+    .attr("r", "20")
     .attr("fill", "green")
     .attr("opacity", ".5");
 
@@ -78,13 +78,10 @@ d3.csv("D3_data_journalism/data/data.csv").then(function(censusData) {
     .enter()
     .append("text")
     .text(function(d) {return d.abbr;})
-    .attr("x", d => xLinearScale(d.poverty))
-    .attr("y", d => yLinearScale(d.smokes))
+    .attr("x", d => xLinearScale(d.poverty-0.25))
+    .attr("y", d => yLinearScale(d.smokes-0.25))
     .attr("r", "15")
-    .attr("fill", "green")
-    .attr("opacity", ".5");
-
-
+    .attr("fill", "white");
 
 
 
@@ -103,7 +100,7 @@ d3.csv("D3_data_journalism/data/data.csv").then(function(censusData) {
 
     //  Create event listeners to display and hide the tooltip
     // ==============================
-    circlesGroup.on("click", function(data) {
+    circlesGroup.on("mouseover", function(data) {
       toolTip.show(data, this);
     })
       // onmouseout event
